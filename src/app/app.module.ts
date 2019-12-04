@@ -43,7 +43,7 @@ import { ServicesComponent } from './services/services.component';
     HttpClientModule,
     DataTableModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyC79afsHDQ-yfAvv-xKWId0nW4yJk9jWfM'
+      apiKey: '*****************'
     })
   ],
   providers: [],
