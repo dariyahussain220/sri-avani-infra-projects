@@ -1,0 +1,91 @@
+body{
+    background-color: #25274d;
+}
+.contact{
+    padding: 4%;
+    height: 400px;
+}
+.col-md-4{
+    background: #ff9b00;
+    padding: 4%;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+.contact-info{
+    margin-top:10%;
+}
+.contact-info img{
+    margin-bottom: 15%;
+}
+.contact-info h2{
+    margin-bottom: 10%;
+}
+.col-md-9{
+    background: #fff;
+    padding: 3%;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+.contact-form label{
+    font-weight:600;
+}
+.contact-form{
+    padding: 12px;
+}
+.contact-form button{
+    background: #25274d;
+    color: #fff;
+    font-weight: 600;
+    width: 25%;
+}
+.contact-form button:focus{
+    box-shadow:none;
+}
+.btn-info{
+    background: linear-gradient(135deg, #ff2b67, #ff5442);
+padding: 6px 20px;
+border: none;
+box-shadow: 0 4px 6px rgba(0,0,0,0.11), 0 1px 3px rgba(0,0,0,0.08);
+}
+.section {
+padding-top: 60px;
+padding-bottom: 60px;
+}
+.col-sm-offset-0 {
+margin-left: 0;
+}
+.col-sm-3 {
+width: 25%;
+}
+footer hr {
+border-color: #fff;
+border-width: 1px;
+max-width:100%;
+}
+.footer{
+background-color:#1a232d;
+}
+h2{
+color:#fff;
+}
+h3{
+font-size:25px;
+color:#fff;
+}
+.footer li , .control-label {
+color: rgba(255,255,255,0.8);
+line-height: 1.7;
+font-size: 22px;
+}
+.section-footer-copyright{
+color:#ccc;
+}
+.message {
+    margin: 0px -1.5px 0px 0px;
+    height: 101px;
+    width: 265px;
+}
+agm-map {
+    height: 300px;
+    width: 438px;
+  }

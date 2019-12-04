@@ -1,0 +1,163 @@
+<!-- <div class="container contact">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="contact-info">
+                    <img src="https://image.ibb.co/kUASdV/contact-image.png" alt="image"/>
+                    <h2>Contact Us</h2>
+                    <h4>We would love to hear from you !</h4>
+                    <p>Plot no: 940 <br/> Road no.1,1st floor,Abhiruchi</p>
+                    <p>swaruha foods buildin</p>
+                    <p>Vivekananda nagar, Kukatpally,</p>
+                    <h4>Hyderabad, TS, 500072</h4>
+
+                    <p><b>Email Id:</b> srivaniinfraprojects21@gmail.com</p>
+                    Mobile Numbers
+                    8501057527
+                    9346918444
+                    9885530645
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="contact-form">
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="fname">First Name:</label>
+                      <div class="col-sm-10">          
+                        <input type="text" class="form-control" id="fname" placeholder="Enter First Name" name="fname">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="lname">Last Name:</label>
+                      <div class="col-sm-10">          
+                        <input type="text" class="form-control" id="lname" placeholder="Enter Last Name" name="lname">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="email">Email:</label>
+                      <div class="col-sm-10">
+                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="comment">Comment:</label>
+                      <div class="col-sm-10">
+                        <textarea class="form-control" rows="5" id="comment"></textarea>
+                      </div>
+                    </div>
+                    <div class="form-group">        
+                      <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default">Submit</button>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     -->
+
+
+<div class="clearfix">
+    <footer class="footer">
+        <div class="section section-footer-content">
+            <div class="container">
+                <div class="row row-call-to-action">
+                    <div class="col-xs-12 text-center">
+                        <h2 class="h1">Build your infrastructure now.</h2>
+                    </div>
+                </div>
+                <div class="row row-sitemap">
+                    <div class="col-xs-10 col-xs-offset-1 col-sm-2 col-sm-offset-0">
+                        <hr class="hr-sm">
+                        <ul class="list-unstyled">
+                            <li>Plot no: 940</li>
+                            <li>Road no.1,1st floor,Abhiruchi</li>
+                            <li>swagruha foods building</li>
+                            <li>Vivekananda nagar, Kukatpally,</li>
+                            <li>Hyderabad, TS, 500072</li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-0">
+                        <hr class="hr-sm">
+                        <ul class="list-unstyled">
+                            <li>Mobile Numbers</li>
+                            <li>8501057527</li>
+                            <li>9346918444</li>
+                            <li>9885530645</li>
+                            <li>9640761861</li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-0">
+                        <hr class="hr-sm">
+
+                        <div class="card-body p-3">
+
+                            <!--Body-->
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="name" placeholder="Enter name"
+                                    required="required" />
+                            </div>
+                            <div class="form-group">
+
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+                                    </span>
+                                    <input type="email" class="form-control" id="email"
+                                        placeholder="Enter email address" required="required" /></div>
+                            </div>
+
+                            <div class="form-group">
+                                <textarea name="message" id="message" class="form-control message" rows="9" cols="25"
+                                    required="required" placeholder="Message"></textarea>
+                            </div>
+
+                            <div class="text-center">
+                                <input type="submit" value="Submit" class="btn btn-info btn-block rounded-0 py-2">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-0">
+                        <hr class="hr-sm">
+                        <h2 style="font-size: 22px;font-family:sans-serif;"><b style="font-family:sans-serif;">Email:</b>sriavaniinfraprojects21@gmail.com</h2><br>
+                        <!-- <h1 style="color: white;">{{ title }}</h1> -->
+                        <div>
+                                <agm-map 
+                                [latitude]="lat"
+                                [longitude]="lng"
+                                [zoom]="zoom"
+                                [disableDefaultUI]="false"
+                                [zoomControl]="false"
+                                (mapClick)="mapClicked($event)">
+                              
+                                <agm-marker 
+                                    *ngFor="let m of markers; let i = index"
+                                    (markerClick)="clickedMarker(m.label, i)"
+                                    [latitude]="m.lat"
+                                    [longitude]="m.lng"
+                                    [label]="m.label"
+                                    [markerDraggable]="m.draggable"
+                                    (dragEnd)="markerDragEnd(m, $event)">
+                                    
+                                  <agm-info-window>
+                                    <strong>InfoWindow content</strong>
+                                  </agm-info-window>
+                                  
+                                </agm-marker>
+                                
+                                <agm-circle [latitude]="lat + 0.3" [longitude]="lng" 
+                                    [radius]="5000"
+                                    [fillColor]="'red'"
+                                    [circleDraggable]="true"
+                                    [editable]="true">
+                                </agm-circle>
+                              
+                              </agm-map>
+                        </div>
+                        
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </footer>
+</div>

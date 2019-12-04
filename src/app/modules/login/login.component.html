@@ -1,0 +1,37 @@
+<div class="login-bg">
+        <div class="login-container">
+            <div class="login-logos">
+                <div class="clearfix"></div>
+            </div>
+    
+            <div class="form-set">
+                <div class="col-md-10">
+                    <form name="loginform" #LoginForm="ngForm">
+                        <div class="login-heading">Login</div>
+                        <div class="login-sub-heading">Sign in to your account</div>
+                        <span id="reauth-email" class="reauth-email"></span>
+                        <div class="position-relative">
+                            <img src="../assets/user-icon.png" />
+                            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="username" [(ngModel)]="user.username"  autofocus>
+                        </div>
+                        <div class="position-relative">
+                            <img src="assets/password-icon.png" />
+                            <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" [(ngModel)]="user.password" >
+                        </div>
+                        <button type="submit" (click)="login()">Sign in</button>
+                        <a routerLink="/forgot-password" class="forgot-password pull-right">Forgot the password?</a>
+                    </form>
+                </div>
+                <!-- <div class="col-md-5">
+                    <h1>Support</h1>
+                    <div class="supp-txt">
+                        MYBOX Technologies Pvt. Ltd. A 27, 2nd Floor, Mohan Cooperative Industrial Estate, New Delhi. 110044
+                    </div>
+                    <h4>Website</h4>
+                    <div class="supp-txt">www.mybox.net.in</div>
+                </div> -->
+                <div class="clearfix"> </div>
+            </div>
+    
+        </div>
+    </div>

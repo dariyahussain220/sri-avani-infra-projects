@@ -1,0 +1,36 @@
+.mybox-table {
+    border: 1px solid #c8ced3;
+    color: #73818f;
+    margin: 0 0 20px 0;
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: initial;
+}
+
+.mybox-table thead {
+    border: 1px solid #c8ced3;
+    font-weight: 400
+}
+
+.mybox-table thead th {
+    background-color: #F8F9F9;
+    padding: 8px;
+    border-bottom: 1px solid #c8ced3;
+}
+
+.mybox-table td {
+    padding: 8px;
+}
+
+.mybox-table thead th a {
+    color: #73818f;
+    font-weight: 500;
+}
+
+.mybox-table tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+.mybox-table tr:hover {
+    background-color: #f4f4f4!important;
+}

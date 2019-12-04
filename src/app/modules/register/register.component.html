@@ -1,0 +1,246 @@
+<div class="App">
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <h2>ASSOCIATE FORM</h2>
+                <div class="panel  addteacherpanel">
+
+                    <div class="panel-body teacherpanel">
+                        <form id="form" class="form-horizontal" role="form" name="studentregistrationform">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="left-side-form">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label> Identity No:</label>
+                                            </div>
+                                            <div class="col-md-8 ">
+                                                <input type="text" class="form-control form-input" name="identitynumber"
+                                                    placeholder="Identity number*" [(ngModel)]="user.identitynumber" required />
+                                            </div>
+                                        </div><br />
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label> Name</label>
+                                            </div>
+                                            <div class="col-md-8 ">
+                                                <input type="text" class="form-control form-input" name="name"
+                                                    placeholder="name*" [(ngModel)]="user.name" required />
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label> Father/Husband's Name</label>
+                                            </div>
+                                            <div class="col-md-8 ">
+                                                <input type="text" class="form-control form-input" name="fatherName"
+                                                    placeholder="Father/Husband's Name*" [(ngModel)]="user.fatherName" required />
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label>E-mail</label>
+                                            </div>
+                                            <div class="col-md-8 ">
+                                                <input type="email" class="form-control form-input" name="eMail"
+                                                    placeholder="xxxxxxxxx@yyyy.com*" [(ngModel)]="user.eMail" required />
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label>Contact Number</label>
+                                            </div>
+                                            <div class="col-md-8 ">
+                                                <input type="text" class="form-control form-input"
+                                                    name="contactNumber" [(ngModel)]="user.contactNumber" placeholder="Contact Number*" required />
+                                            </div>
+                                        </div>
+                                        <br />
+
+
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="left-side-form">
+                                        <div class="row">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <label>Nominee Name</label>
+                                                </div>
+                                                <div class="col-md-8 ">
+                                                    <input type="text" class="form-control form-input" name="nomineeName"
+                                                        placeholder="Nominee Name*" [(ngModel)]="user.nomineeName" required />
+                                                </div>
+                                            </div>
+                                            <br />
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <label>Wedding Anniversary</label>
+                                                </div>
+                                                <div class="col-md-8 ">
+                                                    <input type="text" class="form-control form-input" name="weddingAnniversary"
+                                                        placeholder="Wedding Anniversary*" [(ngModel)]="user.weddingAnniversary"required />
+                                                </div>
+                                            </div>
+                                            <br />
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <label>Address</label>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <textarea rows="4" cols="40" name="about"
+                                                        class="form-control form-input" required></textarea>
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+
+                            </div>
+                            <hr />
+                            <div class="row">
+                                <div class="col-lg-1">
+                                    <label>Occupation:</label>
+                                </div>
+                                <div class="col-lg-4">
+                                    <input type="text" class="form-control form-input" id="" name="degree"
+                                        placeholder="Occupation*" required />
+
+                                </div>
+                                <div class="col-lg-1">
+                                    <label>D.O.B</label>
+                                </div>
+                                <div class="col-lg-2">
+                                    <input type="text" class="form-control form-input" id="" name="percntagedegree"
+                                        placeholder="MM/DD/YYYY" required />
+
+                                </div>
+                                <div class="col-lg-1">
+                                    <label>Age:</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <input type="text" class="form-control form-input" id="" name="yopdegree"
+                                        placeholder="Age*" required />
+
+                                </div>
+
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-lg-1">
+                                    <label>Designation</label>
+                                </div>
+                                <div class="col-lg-4">
+                                    <input type="text" class="form-control form-input" id="" name="inter"
+                                        placeholder="Designation*" required />
+
+                                </div>
+                                <div class="col-lg-1">
+                                    <label>Telephone:</label>
+                                </div>
+                                <div class="col-lg-2">
+                                    <input type="text" class="form-control form-input" id="" name="percentageinter"
+                                        placeholder="040-4360112" required />
+
+                                </div>
+                                <div class="col-lg-1">
+                                    <label>Mobile</label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <input type="text" class="form-control form-input" id="" name="yopinter"
+                                        placeholder="+910000000000" required />
+
+                                </div>
+
+                            </div>
+                            <br />
+                            <hr />
+
+                            <div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="left-side-form">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <label>Name</label>
+                                                </div>
+                                                <div class="col-md-8 ">
+                                                    <input type="text" class="form-control form-input" id="" name="Name"
+                                                        placeholder="Father Name*" required />
+                                                </div>
+                                            </div>
+                                            <br />
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <label>Bank A/C No:</label>
+                                                </div>
+                                                <div class="col-md-8 ">
+                                                    <input type="text" class="form-control form-input" id=""
+                                                        name="fathername" placeholder="xxxxxxxxx*" required />
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="right-side-form">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <label>IFSC Code:</label>
+                                                </div>
+                                                <div class="col-md-8 ">
+                                                    <input type="text" class="form-control form-input" id=""
+                                                        name="mothername" placeholder="Mother Name*" required />
+                                                </div>
+                                            </div>
+                                            <br />
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <label>Pan Card No:</label>
+                                                </div>
+                                                <div class="col-md-8 ">
+                                                    <input type="text" class="form-control form-input" id=""
+                                                        name="mothername" placeholder="Mother Name*" required />
+                                                </div>
+                                            </div>
+                                            <br />
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <label>Aadhar No:</label>
+                                                </div>
+                                                <div class="col-md-8 ">
+                                                    <input type="text" class="form-control form-input" id=""
+                                                        name="mothername" placeholder="Aadhar number*" required />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row applystyle">
+                                    <div class="col-lg-6 col-lg-offset-3 text-center">
+                                        <div class="col-lg-2">
+                                            <button id="btn-reset" type="reset" class="btn button"> Reset</button></div>
+                                        <div class="col-lg-2">
+                                            <button id="btn-Register" type="submit" name="submit">Submit</button></div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
