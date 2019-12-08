@@ -8,6 +8,7 @@ import { AboutComponent } from './modules/about/about.component';
 import { ContactUsComponent } from './modules/contact-us/contact-us.component';
 import { ServicesComponent } from './services/services.component';
 import { GalleryComponent } from './gallery/gallery.component';
+
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
