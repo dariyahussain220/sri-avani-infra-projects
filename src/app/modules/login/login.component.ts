@@ -20,18 +20,24 @@ export class LoginComponent implements OnInit {
   ngOnInit() {}
   login(LoginForm) {
     console.log(LoginForm.value.username);
-    if (
-      LoginForm.value.username == "admin" &&
-      LoginForm.value.username == "admin"
-    ) {
-      console.log("success");
+    // if (
+    //   LoginForm.value.username == "admin" &&
+    //   LoginForm.value.username == "admin"
+    // ) {
+    //   console.log("success");
+    //   this.router.navigate(["users-list"]);
+    // }
+    this.user = {
+      username: LoginForm.value.username,
+      password: LoginForm.value.password
+    };
+    console.log(this.user);
+    this.loginService.logIn(this.user).subscribe((data: any) => {
+      console.log(data);
       this.router.navigate(["users-list"]);
-    }
-    // this.loginService.logIn(this.user).subscribe( (data: any) => {
-    //   if ( data.success === true ) {
-    //     console.log('login success');
-    //     this.router.navigate(['users-list']);
-    //   }
-    // });
+      // if (data.success === true) {
+
+      // }
+    });
   }
 }
