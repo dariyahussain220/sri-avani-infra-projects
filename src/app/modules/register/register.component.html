@@ -13,20 +13,17 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="left-side-form">
-                                        <div class="row">
+                                        <!-- <div class="row">
                                             <div class="col-md-4">
                                                 <label> Identity No:</label>
                                             </div>
                                             <div class="col-md-8 ">
-                                                <!-- <input type="text" class="form-control form-input" name="identitynumber"
-                                                    placeholder="Identity number*" [(ngModel)]="user.identitynumber" required />
-                                                    <label>First Name</label> -->
                                                     <input type="text" formControlName="identitynumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.identitynumber.errors }"  placeholder="Identity number*" />
                                                     <div *ngIf="submitted && f.identitynumber.errors" class="invalid-feedback">
                                                         <div *ngIf="f.identitynumber.errors.required">Identity is required</div>
                                                     </div>
                                             </div>
-                                        </div><br />
+                                        </div><br /> -->
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <label> Name</label>
@@ -46,11 +43,10 @@
                                                 <label> Father/Husband's Name</label>
                                             </div>
                                             <div class="col-md-8 ">
-                                                <!-- <input type="text" class="form-control form-input" name="fatherName"
-                                                    placeholder="Father/Husband's Name*" [(ngModel)]="user.fatherName" required /> -->
-                                                    <input type="text" formControlName="fatherName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fatherName.errors }" placeholder="Enter Father Name*" />
-                                                    <div *ngIf="submitted && f.fatherName.errors" class="invalid-feedback">
-                                                        <div *ngIf="f.fatherName.errors.required">Father Name is required</div>
+                                                
+                                                    <input type="text" formControlName="guardian" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.guardian.errors }" placeholder="Enter Father Name*" />
+                                                    <div *ngIf="submitted && f.guardian.errors" class="invalid-feedback">
+                                                        <div *ngIf="f.guardian.errors.required">Father Name is required</div>
                                                     </div>
                                             </div>
                                         </div>
@@ -60,11 +56,10 @@
                                                 <label>E-mail</label>
                                             </div>
                                             <div class="col-md-8 ">
-                                                <!-- <input type="email" class="form-control form-input" name="eMail"
-                                                    placeholder="xxxxxxxxx@yyyy.com*" [(ngModel)]="user.eMail" required /> -->
-                                                    <input type="text" formControlName="eMail" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.eMail.errors }" placeholder="Enter Email*" />
-                                                    <div *ngIf="submitted && f.eMail.errors" class="invalid-feedback">
-                                                        <div *ngIf="f.eMail.errors.required">Email is required</div>
+                                                
+                                                    <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" placeholder="Enter Email*" />
+                                                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                                        <div *ngIf="f.email.errors.required">Email is required</div>
                                                     </div>
                                             </div>
                                         </div>
@@ -74,11 +69,36 @@
                                                 <label>Contact Number</label>
                                             </div>
                                             <div class="col-md-8 ">
-                                                <!-- <input type="text" class="form-control form-input"
-                                                    name="contactNumber" [(ngModel)]="user.contactNumber" placeholder="Contact Number*" required /> -->
-                                                    <input type="text" formControlName="contactNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.contactNumber.errors }" placeholder="Enter Contact Number*" />
-                                                    <div *ngIf="submitted && f.contactNumber.errors" class="invalid-feedback">
-                                                        <div *ngIf="f.contactNumber.errors.required">Contact Number is required</div>
+                                             
+                                                    <input type="text" formControlName="mobileNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mobileNumber.errors }" placeholder="Enter Contact Number*" />
+                                                    <div *ngIf="submitted && f.mobileNumber.errors" class="invalid-feedback">
+                                                        <div *ngIf="f.mobileNumber.errors.required">Contact Number is required</div>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label>Introduced By</label>
+                                            </div>
+                                            <div class="col-md-8 ">
+                                             
+                                                    <input type="text" formControlName="introducedBy" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.introducedBy.errors }" placeholder="Enter Contact Number*" />
+                                                    <div *ngIf="submitted && f.introducedBy.errors" class="invalid-feedback">
+                                                        <div *ngIf="f.introducedBy.errors.required">Name is required</div>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label>Employee Code</label>
+                                            </div>
+                                            <div class="col-md-8 ">
+                                             
+                                                    <input type="text" formControlName="employeeCode" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.employeeCode.errors }" placeholder="Enter Contact Number*" />
+                                                    <div *ngIf="submitted && f.employeeCode.errors" class="invalid-feedback">
+                                                        <div *ngIf="f.employeeCode.errors.required">Name is required</div>
                                                     </div>
                                             </div>
                                         </div>
@@ -93,8 +113,7 @@
                                                     <label>Nominee Name</label>
                                                 </div>
                                                 <div class="col-md-8 ">
-                                                    <!-- <input type="text" class="form-control form-input" name="nomineeName"
-                                                        placeholder="Nominee Name*" [(ngModel)]="user.nomineeName" required /> -->
+                                                    
                                                     <input type="text" formControlName="nomineeName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nomineeName.errors }" placeholder="Enter Nominee Name*" />
                                                     <div *ngIf="submitted && f.nomineeName.errors" class="invalid-feedback">
                                                         <div *ngIf="f.nomineeName.errors.required">Nominee is required</div>
@@ -104,14 +123,26 @@
                                             <br />
                                             <div class="row">
                                                 <div class="col-md-4">
+                                                    <label>Relationship with Nominee</label>
+                                                </div>
+                                                <div class="col-md-8 ">
+                                                   
+                                                    <input type="text" formControlName="nomineeRelationShip" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nomineeRelationShip.errors }" placeholder="Fill the Feild*" />
+                                                    <div *ngIf="submitted && f.nomineeRelationShip.errors" class="invalid-feedback">
+                                                        <div *ngIf="f.nomineeRelationShip.errors.required">Nominee is required</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br />
+                                            <div class="row">
+                                                <div class="col-md-4">
                                                     <label>Wedding Anniversary</label>
                                                 </div>
                                                 <div class="col-md-8 ">
-                                                    <!-- <input type="text" class="form-control form-input" name="weddingdate"
-                                                        placeholder="Wedding Anniversary*" [(ngModel)]="user.weddingAnniversary"required /> -->
-                                                        <input type="text" formControlName="weddingdate" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.weddingdate.errors }" placeholder="Enter weddingAnniversary*" />
-                                                        <div *ngIf="submitted && f.weddingdate.errors" class="invalid-feedback">
-                                                            <div *ngIf="f.weddingdate.errors.required">weddingAnniversary is required</div>
+                                                    
+                                                        <input type="text" formControlName="weddingAnniversary" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.weddingAnniversary.errors }" placeholder="Enter weddingAnniversary*" />
+                                                        <div *ngIf="submitted && f.weddingAnniversary.errors" class="invalid-feedback">
+                                                            <div *ngIf="f.weddingAnniversary.errors.required">weddingAnniversary is required</div>
                                                         </div>
                                                 </div>
                                             </div>
@@ -121,8 +152,7 @@
                                                     <label>Address</label>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <!-- <textarea rows="4" cols="40" name="address"
-                                                        class="form-control form-input" required></textarea> -->
+                                                    
                                                         <textarea rows="4" cols="40" name="address"
                                                         formControlName="address" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.address.errors }" placeholder="Enter Address*"></textarea>
                                                         <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
@@ -141,8 +171,7 @@
                                     <label>Occupation:</label>
                                 </div>
                                 <div class="col-lg-4">
-                                    <!-- <input type="text" class="form-control form-input" id="" name="occupation"
-                                        placeholder="Occupation*" required /> -->
+                                    
                                         <input type="text" formControlName="occupation" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.occupation.errors }" placeholder="Enter Occupation*" />
                                         <div *ngIf="submitted && f.occupation.errors" class="invalid-feedback">
                                             <div *ngIf="f.occupation.errors.required">Occupation is required</div>
@@ -152,8 +181,7 @@
                                     <label>D.O.B</label>
                                 </div>
                                 <div class="col-lg-2">
-                                    <!-- <input type="text" class="form-control form-input" id="" name="dob"
-                                        placeholder="MM/DD/YYYY" required /> -->
+                                  
                                     <input type="text" formControlName="dob" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" placeholder="MM/DD/YYYY" />
                                     <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
                                         <div *ngIf="f.dob.errors.required">DOB is required</div>
@@ -163,8 +191,7 @@
                                     <label>Age:</label>
                                 </div>
                                 <div class="col-lg-3">
-                                    <!-- <input type="text" class="form-control form-input" id="" name="age"
-                                        placeholder="Age*" required /> -->
+                                    
                                         <input type="text" formControlName="age" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.age.errors }" placeholder="Enter Age" />
                                         <div *ngIf="submitted && f.age.errors" class="invalid-feedback">
                                             <div *ngIf="f.age.errors.required">Age is required</div>
@@ -177,8 +204,7 @@
                                     <label>Designation</label>
                                 </div>
                                 <div class="col-lg-4">
-                                    <!-- <input type="text" class="form-control form-input" id="" name="designation"
-                                        placeholder="Designation*" required /> -->
+                                 
                                         <input type="text" formControlName="designation" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.designation.errors }" placeholder="Enter Desgnation" />
                                         <div *ngIf="submitted && f.designation.errors" class="invalid-feedback">
                                             <div *ngIf="f.designation.errors.required">Designation is required</div>
@@ -188,24 +214,13 @@
                                     <label>Telephone:</label>
                                 </div>
                                 <div class="col-lg-2">
-                                    <!-- <input type="text" class="form-control form-input" id="" name="telephone"
-                                        placeholder="040-4360112" required /> -->
+                                   
                                         <input type="text" formControlName="telephone" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.telephone.errors }" placeholder="Enter Telephone" />
                                         <div *ngIf="submitted && f.telephone.errors" class="invalid-feedback">
                                             <div *ngIf="f.telephone.errors.required">Telephone is required</div>
                                         </div>
                                 </div>
-                                <div class="col-lg-1">
-                                    <label>Mobile</label>
-                                </div>
-                                <div class="col-lg-3">
-                                    <!-- <input type="text" class="form-control form-input" id="" name="mobile"
-                                        placeholder="+910000000000" required /> -->
-                                        <input type="text" formControlName="mobile" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }" placeholder="Enter Mobile" />
-                                        <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
-                                            <div *ngIf="f.mobile.errors.required">Mobile is required</div>
-                                        </div>
-                                </div>
+                              
                             </div>
                             <br />
                             <hr />
@@ -221,9 +236,9 @@
                                                 <div class="col-md-8 ">
                                                     <!-- <input type="text" class="form-control form-input" id="" name="bankname"
                                                         placeholder="Enter Bank Name*" required /> -->
-                                                        <input type="text" formControlName="bankname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.bankname.errors }" placeholder="Enter Bank Name" />
-                                                        <div *ngIf="submitted && f.bankname.errors" class="invalid-feedback">
-                                                            <div *ngIf="f.bankname.errors.required">Bank Names</div>
+                                                        <input type="text" formControlName="bankName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.bankName.errors }" placeholder="Enter Bank Name" />
+                                                        <div *ngIf="submitted && f.bankName.errors" class="invalid-feedback">
+                                                            <div *ngIf="f.bankName.errors.required">Bank Names</div>
                                                         </div>
                                                 </div>
                                             </div>
@@ -235,9 +250,9 @@
                                                 <div class="col-md-8 ">
                                                     <!-- <input type="text" class="form-control form-input" id=""
                                                         name="accno" placeholder="xxxxxxxxx*" required /> -->
-                                        <input type="text" formControlName="accno" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.accno.errors }" placeholder="Enter the Bank A/C" />
-                                        <div *ngIf="submitted && f.accno.errors" class="invalid-feedback">
-                                            <div *ngIf="f.accno.errors.required">Bank A/C is required</div>
+                                        <input type="text" formControlName="bankAccountNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.bankAccountNumber.errors }" placeholder="Enter the Bank A/C" />
+                                        <div *ngIf="submitted && f.bankAccountNumber.errors" class="invalid-feedback">
+                                            <div *ngIf="f.bankAccountNumber.errors.required">Bank A/C is required</div>
                                         </div>
                                                 </div>
                                             </div> <br />
@@ -248,9 +263,9 @@
                                                     <div class="col-md-8 ">
                                                         <!-- <input type="text" class="form-control form-input" id=""
                                                             name="ifsccode" placeholder="Enter IFSC Code*" required /> -->
-                                            <input type="text" formControlName="ifsccode" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ifsccode.errors }" placeholder="Enter IFSC Code" />
-                                            <div *ngIf="submitted && f.ifsccode.errors" class="invalid-feedback">
-                                                <div *ngIf="f.ifsccode.errors.required">IFSC Code is required</div>
+                                            <input type="text" formControlName="ifscCode" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ifscCode.errors }" placeholder="Enter IFSC Code" />
+                                            <div *ngIf="submitted && f.ifscCode.errors" class="invalid-feedback">
+                                                <div *ngIf="f.ifscCode.errors.required">IFSC Code is required</div>
                                             </div>
                                                     </div>
                                                 </div>
@@ -267,9 +282,9 @@
                                                 <div class="col-md-8 ">
                                                     <!-- <input type="text" class="form-control form-input" id=""
                                                         name="pancard" placeholder="Enter PAN Card Number*" required /> -->
-                                                        <input type="text" formControlName="pancard" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.pancard.errors }" placeholder="Enter IFSC Code" />
-                                                        <div *ngIf="submitted && f.pancard.errors" class="invalid-feedback">
-                                                            <div *ngIf="f.pancard.errors.required">Pan Card is required</div>
+                                                        <input type="text" formControlName="panCardNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.panCardNumber.errors }" placeholder="Enter IFSC Code" />
+                                                        <div *ngIf="submitted && f.panCardNumber.errors" class="invalid-feedback">
+                                                            <div *ngIf="f.panCardNumber.errors.required">Pan Card is required</div>
                                                         </div>
                                                 </div>
                                             </div>
@@ -281,9 +296,9 @@
                                                 <div class="col-md-8 ">
                                                     <!-- <input type="text" class="form-control form-input" id=""
                                                         name="aadharno" placeholder="Aadhar number*" required /> -->
-                                                        <input type="text" formControlName="aadharno" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.aadharno.errors }" placeholder="Enter Aadhar No" />
-                                                        <div *ngIf="submitted && f.aadharno.errors" class="invalid-feedback">
-                                                            <div *ngIf="f.aadharno.errors.required">Aadhar Number required</div>
+                                                        <input type="text" formControlName="aadharNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.aadharNumber.errors }" placeholder="Enter Aadhar No" />
+                                                        <div *ngIf="submitted && f.aadharNumber.errors" class="invalid-feedback">
+                                                            <div *ngIf="f.aadharNumber.errors.required">Aadhar Number required</div>
                                                         </div>
                                                 </div>
                                             </div>

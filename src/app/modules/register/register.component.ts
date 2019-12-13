@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 //import { User } from "src/app/models/user.model";
 import { Router } from "@angular/router";
+import { LoginService } from "src/app/services/login.service";
 @Component({
   selector: "app-register",
   templateUrl: "./register.component.html",
@@ -11,29 +12,34 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private loginService: LoginService
+  ) {}
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
-      identitynumber: ["", Validators.required],
       name: ["", Validators.required],
-      fatherName: ["", Validators.required],
-      eMail: ["", [Validators.required]],
-      contactNumber: ["", [Validators.required]],
-      nomineeName: ["", Validators.required],
-      weddingdate: ["", Validators.required],
-      address: ["", Validators.required],
-      occupation: ["", Validators.required],
+      guardian: ["", Validators.required],
+      email: ["", Validators.required],
       dob: ["", Validators.required],
       age: ["", Validators.required],
-      designation: ["", Validators.required],
+      occupation: ["", Validators.required],
+      nomineeName: ["", Validators.required],
+      nomineeRelationShip: ["", Validators.required],
+      address: ["", Validators.required],
+      mobileNumber: ["", Validators.required],
       telephone: ["", Validators.required],
-      mobile: ["", Validators.required],
-      // fathername: ["", Validators.required],
-      accno: ["", Validators.required],
-      ifsccode: ["", Validators.required],
-      pancard: ["", Validators.required],
-      aadharno: ["", Validators.required]
+      bankAccountNumber: ["", Validators.required],
+      bankName: ["", Validators.required],
+      ifscCode: ["", Validators.required],
+      panCardNumber: ["", Validators.required],
+      aadharNumber: ["", Validators.required],
+      introducedBy: ["", Validators.required],
+      employeeCode: ["", Validators.required],
+      weddingAnniversary: ["", Validators.required],
+      designation: ["", Validators.required]
     });
   }
   get f() {
@@ -48,14 +54,19 @@ export class RegisterComponent implements OnInit {
       return;
     } else {
       console.log(this.registerForm.value);
+      let myJosn = JSON.stringify(this.registerForm.value);
+      this.addassociate(myJosn);
       //Trigger Formdata Submission Api
-      this.router.navigate(["users-list"]);
+      // this.router.navigate(["users-list"]);
     }
-
-    //display form values on success
-    // alert(
-    //   "SUCCESS!! :-)\n\n" + JSON.stringify(this.registerForm.value, null, 4)
-    // );
+  }
+  addassociate(data) {
+    this.loginService.addAssociate(data).subscribe((res: any) => {
+      console.log(res);
+      if (res) {
+        this.router.navigate(["users-list"]);
+      }
+    });
   }
   onReset() {
     this.submitted = false;

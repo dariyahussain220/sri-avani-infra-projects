@@ -7,8 +7,8 @@ import { UsersListComponent } from "./modules/users-list/users-list.component";
 import { AboutComponent } from "./modules/about/about.component";
 import { ContactUsComponent } from "./modules/contact-us/contact-us.component";
 import { ServicesComponent } from "./modules/services/services.component";
-import { GalleryComponent } from "./gallery/gallery.component";
-
+import { GalleryComponent } from "./modules/gallery/gallery.component";
+import { EditUserformComponent } from "./modules/edit-userform/edit-userform.component";
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "home", component: HomeComponent },
@@ -18,7 +18,8 @@ const routes: Routes = [
   { path: "services", component: AboutComponent },
   { path: "contactUs", component: ContactUsComponent },
   { path: "about", component: ServicesComponent },
-  { path: "gallery", component: GalleryComponent }
+  { path: "gallery", component: GalleryComponent },
+  { path: "editform", component: EditUserformComponent }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
