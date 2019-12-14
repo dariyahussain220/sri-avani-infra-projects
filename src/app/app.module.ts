@@ -18,7 +18,10 @@ import { ContactUsComponent } from "./modules/contact-us/contact-us.component";
 import { AgmCoreModule } from "@agm/core";
 import { GalleryComponent } from "./modules/gallery/gallery.component";
 import { ServicesComponent } from "./modules/services/services.component";
-import { EditUserformComponent } from "./modules/edit-userform/edit-userform.component";
+import {
+  EditUserformComponent,
+  DialogDataExampleDialog
+} from "./modules/edit-userform/edit-userform.component";
 import { A11yModule } from "@angular/cdk/a11y";
 import { DragDropModule } from "@angular/cdk/drag-drop";
 import { PortalModule } from "@angular/cdk/portal";
@@ -73,7 +76,8 @@ import { MatTreeModule } from "@angular/material/tree";
     ContactUsComponent,
     GalleryComponent,
     ServicesComponent,
-    EditUserformComponent
+    EditUserformComponent,
+    DialogDataExampleDialog
   ],
   imports: [
     A11yModule,
@@ -133,6 +137,7 @@ import { MatTreeModule } from "@angular/material/tree";
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [MaterialModule]
+  exports: [MaterialModule],
+  entryComponents: [DialogDataExampleDialog]
 })
 export class AppModule {}

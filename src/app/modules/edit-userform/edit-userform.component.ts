@@ -1,9 +1,5 @@
 import { Component, OnInit, Inject } from "@angular/core";
-import {
-  MatDialog,
-  MatDialogRef,
-  MAT_DIALOG_DATA
-} from "@angular/material/dialog";
+import { MatDialog, MAT_DIALOG_DATA } from "@angular/material/dialog";
 import {
   FormGroup,
   FormBuilder,
@@ -13,6 +9,11 @@ import {
 //import { User } from "src/app/models/user.model";
 import { Router, ActivatedRoute } from "@angular/router";
 import { LoginService } from "src/app/services/login.service";
+
+export interface DialogData {
+  animal: "panda" | "unicorn" | "lion";
+}
+
 @Component({
   selector: "app-edit-userform",
   templateUrl: "./edit-userform.component.html",
@@ -40,8 +41,9 @@ export class EditUserformComponent implements OnInit {
         for (let i = 0; i < this.editdata.length; i++) {
           if (params.uid === data[i].userId) {
             this.editdata = data[i];
+            this.getPaymentslist(this.editdata.userId);
             console.log(this.editdata);
-
+            this.registerForm.controls["userId"].setValue(this.editdata.userId);
             this.registerForm.controls["name"].setValue(this.editdata.name);
             this.registerForm.controls["guardian"].setValue(
               this.editdata.guardian
@@ -100,6 +102,7 @@ export class EditUserformComponent implements OnInit {
       });
     });
     this.registerForm = new FormGroup({
+      userId: new FormControl(),
       name: new FormControl(),
       guardian: new FormControl(),
       email: new FormControl(),
@@ -125,18 +128,11 @@ export class EditUserformComponent implements OnInit {
   get f() {
     return this.registerForm.controls;
   }
-  animal: string;
-  name: string;
-
-  openDialog(): void {
-    const dialogRef = this.dialog.open("dialogoverviewexampledialog", {
-      width: "250px",
-      data: { name: this.name, animal: this.animal }
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log("The dialog was closed");
-      this.animal = result;
+  openDialog() {
+    this.dialog.open(DialogDataExampleDialog, {
+      data: {
+        animal: "panda"
+      }
     });
   }
   onSubmit() {
@@ -147,49 +143,32 @@ export class EditUserformComponent implements OnInit {
       return;
     } else {
       console.log(this.registerForm.value);
-      //Trigger Formdata Submission Api
-      this.router.navigate(["users-list"]);
+      this.updateassociate(this.registerForm.value);
+      // //Trigger Formdata Submission Api
+      // this.router.navigate(["users-list"]);
     }
-
-    //display form values on success
-    // alert(
-    //   "SUCCESS!! :-)\n\n" + JSON.stringify(this.registerForm.value, null, 4)
-    // );
+  }
+  updateassociate(data) {
+    this.loginService.updateAssociate(data).subscribe(data => {
+      console.log(data);
+    });
   }
   onReset() {
     this.submitted = false;
     this.registerForm.reset();
   }
-}
-export interface DialogData {
-  animal: string;
-  name: string;
+  paymentdata: any;
+  getPaymentslist(id) {
+    this.loginService.getPaymentsList(id).subscribe(data => {
+      console.log(data);
+      this.paymentdata = data;
+    });
+  }
 }
 @Component({
-  selector: "dialogoverviewexampledialog",
-  template: `
-    <h1 mat-dialog-title>Hi {{ data.name }}</h1>
-    <div mat-dialog-content>
-      <p>What's your favorite animal?</p>
-      <mat-form-field>
-        <input matInput [(ngModel)]="data.animal" />
-      </mat-form-field>
-    </div>
-    <div mat-dialog-actions>
-      <button mat-button (click)="onNoClick()">No Thanks</button>
-      <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>
-        Ok
-      </button>
-    </div>
-  `
+  selector: "dialog-data-example-dialog",
+  templateUrl: "dialog-data-example-dialog.html"
 })
-export class DialogOverviewExampleDialog {
-  constructor(
-    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData
-  ) {}
-
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
+export class DialogDataExampleDialog {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
 }

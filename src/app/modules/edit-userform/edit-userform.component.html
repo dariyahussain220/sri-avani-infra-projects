@@ -1,39 +1,6 @@
 <div style="margin-top: 5px;">
 <mat-accordion>
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <!-- Personal data -->
-            </mat-panel-title>
-            <mat-panel-description>
-                    <h2>PAYMENTS SECTION</h2>
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-<div class="row">
-    <div class="col-md-11">
 
-    </div>
-    <div class="col-md-01">
-        <button type="button" class="btn-success">add</button>
-    </div>
-</div>
-<div class="datagrid">
-    <table>
-        <thead>
-            <tr>
-                <th>Amount</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td></td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-        </mat-expansion-panel>
         <mat-expansion-panel (opened)="panelOpenState = true"
                              (closed)="panelOpenState = false">
           <mat-expansion-panel-header>
@@ -352,19 +319,42 @@
                 </div>
             </form>
         </mat-expansion-panel>
+        <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <!-- Personal data -->
+                  </mat-panel-title>
+                  <mat-panel-description>
+                          <h2>PAYMENTS SECTION</h2>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+      <div class="row">
+          <div class="col-md-11">
+      
+          </div>
+          <div class="col-md-01">
+            <button mat-button (click)="openDialog()">Add Payment</button>  
+          </div>
+      </div>
+      <div class="datagrid">
+          <table>
+              <thead>
+                  <tr>
+                      <th>Amount</th>
+                      <th>Description</th>
+                      <th>Balance</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let c of this.paymentdata.paymentInfo">
+                      <td>{{c.amount}}</td>
+                      <td>{{c.description}}</td>
+                      <td>{{this.paymentdata?.balanceAmount}}</td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+              </mat-expansion-panel>
       </mat-accordion>
     </div>
 
-    <ol>
-            <li>
-              <mat-form-field>
-                <input matInput [(ngModel)]="name" placeholder="What's your name?">
-              </mat-form-field>
-            </li>
-            <li>
-              <button mat-raised-button (click)="openDialog()">Pick one</button>
-            </li>
-            <li *ngIf="animal">
-              You chose: <i>{{animal}}</i>
-            </li>
-          </ol>

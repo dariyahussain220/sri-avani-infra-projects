@@ -36,8 +36,8 @@ export class UsersListComponent implements OnInit {
     this.router.navigate(["editform"], navigationExtras);
   }
   deleteUser(c) {
-    console.log(c.id);
-    this.loginService.deleteAssociate(c.id).subscribe(data => {
+    console.log(c.userId);
+    this.loginService.deleteAssociate(c.userId).subscribe(data => {
       console.log(data);
       this.getassociatedata();
     });

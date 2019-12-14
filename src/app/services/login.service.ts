@@ -5,8 +5,7 @@ import "rxjs/add/operator/map";
 
 const httpOptions = {
   headers: new HttpHeaders({
-    "Content-Type": "application/json",
-    observe: "response"
+    "Content-Type": "application/json"
   })
 };
 const Url = "http://3.1.203.185:8082/";
@@ -31,7 +30,7 @@ export class LoginService {
   }
   deleteAssociate(id) {
     return this.httpClient
-      .post(Url + "associates", id, httpOptions)
+      .delete(Url + "associates/" + id, httpOptions)
       .map((res: Response) => {
         return res;
       });
@@ -47,9 +46,36 @@ export class LoginService {
   }
   updateAssociate(data) {
     return this.httpClient
-      .put(Url + "associates", data, httpOptions)
+      .put(Url + "associates/" + data.userId, data, httpOptions)
       .map((res: Response) => {
         return res;
+      });
+  }
+  getPaymentsList(id) {
+    return this.httpClient
+      .get(Url + "paymentInfo/" + id, httpOptions)
+      .map((res: Response) => {
+        if (res) {
+          return res;
+        }
+      });
+  }
+  addPayments(data) {
+    return this.httpClient
+      .post(Url + "paymentInfo", data, httpOptions)
+      .map((res: Response) => {
+        if (res) {
+          return res;
+        }
+      });
+  }
+  deletePayments(id) {
+    return this.httpClient
+      .delete(Url + "paymentInfo/" + id, httpOptions)
+      .map((res: Response) => {
+        if (res) {
+          return res;
+        }
       });
   }
 }
