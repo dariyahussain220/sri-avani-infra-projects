@@ -62,7 +62,7 @@ export class LoginService {
   }
   addPayments(data) {
     return this.httpClient
-      .post(Url + "paymentInfo", data, httpOptions)
+      .post(Url + "paymentInfo/" + data.userId, data, httpOptions)
       .map((res: Response) => {
         if (res) {
           return res;
@@ -72,6 +72,15 @@ export class LoginService {
   deletePayments(id) {
     return this.httpClient
       .delete(Url + "paymentInfo/" + id, httpOptions)
+      .map((res: Response) => {
+        if (res) {
+          return res;
+        }
+      });
+  }
+  sendMessegeservice(data) {
+    return this.httpClient
+      .post(Url + "/message/contact", data, httpOptions)
       .map((res: Response) => {
         if (res) {
           return res;

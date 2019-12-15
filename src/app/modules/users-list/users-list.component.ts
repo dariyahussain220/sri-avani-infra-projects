@@ -9,7 +9,7 @@ import { LoginService } from "src/app/services/login.service";
 })
 export class UsersListComponent implements OnInit {
   selectedEntities: any[];
-
+  parentMessage = "true";
   public data: any;
   constructor(private router: Router, private loginService: LoginService) {}
 

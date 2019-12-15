@@ -1,1 +1,22 @@
-<p>gallery works!</p>
+<!-- <p>gallery works!</p> -->
+<app-header class="clearfix"></app-header>
+<div class="card">
+  <!-- <div class="card-header"><b style="font-size: 30px;color: darkorange;font-family: sans-serif;">Search Results</b></div> -->
+  <div class="card-body">
+    <div class="column" *ngFor="let image of _albums; let i = index">
+      <div style="border:2px solid #333;border-radius: 5px;">
+        <img
+          [src]="image.src"
+          style="width: 360px;height: 360px;cursor: pointer;padding: 5px"
+          (click)="open(i)"
+        />
+      </div>
+    </div>
+    <!-- <div class="column" *ngFor="let c of this.imgpaths;let i=index" >
+            <div style="border:2px solid #333;border-radius: 5px;"  >
+                 <img [src]="c.faceUrl"style="width: 200px;height: 200px;cursor: pointer;padding: 5px" (click)="open(i)" (dblclick)="getImagedbl(c)" popover="Click to see User Details" [popoverOnHover]="true" ><br>
+                 <p style="font-size: 12px;text-align: center;font-weight: bold;margin-bottom: 0px !important;color: darkorange;">{{c.time}}</p>
+             </div>
+        </div> -->
+  </div>
+</div>

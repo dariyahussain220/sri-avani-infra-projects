@@ -14,6 +14,7 @@ import {
 })
 export class LoginComponent implements OnInit {
   user: any = {};
+
   // user = {username: username, email: email};
   constructor(private loginService: LoginService, private router: Router) {}
 

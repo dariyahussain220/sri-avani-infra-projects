@@ -3,6 +3,8 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 //import { User } from "src/app/models/user.model";
 import { Router } from "@angular/router";
 import { LoginService } from "src/app/services/login.service";
+import * as moment from "moment";
+
 @Component({
   selector: "app-register",
   templateUrl: "./register.component.html",
@@ -54,10 +56,20 @@ export class RegisterComponent implements OnInit {
       return;
     } else {
       console.log(this.registerForm.value);
+      console.log(
+        moment(this.registerForm.value.weddingAnniversary).format("DD/MM/YYYY")
+      );
+      this.registerForm.value.weddingAnniversary = moment(
+        this.registerForm.value.weddingAnniversary
+      ).format("DD/MM/YYYY");
+      this.registerForm.value.dob = moment(this.registerForm.value.dob).format(
+        "DD/MM/YYYY"
+      );
       let myJosn = JSON.stringify(this.registerForm.value);
+      console.log(myJosn);
       this.addassociate(myJosn);
-      //Trigger Formdata Submission Api
-      // this.router.navigate(["users-list"]);
+      // Trigger Formdata Submission Api
+      this.router.navigate(["users-list"]);
     }
   }
   addassociate(data) {

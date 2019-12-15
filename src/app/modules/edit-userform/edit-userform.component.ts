@@ -1,13 +1,18 @@
 import { Component, OnInit, Inject } from "@angular/core";
-import { MatDialog, MAT_DIALOG_DATA } from "@angular/material/dialog";
+import {
+  MatDialog,
+  MAT_DIALOG_DATA,
+  MatDialogRef
+} from "@angular/material/dialog";
 import {
   FormGroup,
   FormBuilder,
   Validators,
   FormControl
 } from "@angular/forms";
+import { MatSnackBar } from "@angular/material/snack-bar";
 //import { User } from "src/app/models/user.model";
-import { Router, ActivatedRoute } from "@angular/router";
+import { Router, ActivatedRoute, NavigationExtras } from "@angular/router";
 import { LoginService } from "src/app/services/login.service";
 
 export interface DialogData {
@@ -21,14 +26,16 @@ export interface DialogData {
 })
 export class EditUserformComponent implements OnInit {
   registerForm: FormGroup;
-  submitted = false;
 
+  submitted = false;
+  parentMessage = "true";
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
     private route: ActivatedRoute,
     private loginService: LoginService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private _snackBar: MatSnackBar
   ) {}
   editdata: any;
 
@@ -128,6 +135,7 @@ export class EditUserformComponent implements OnInit {
   get f() {
     return this.registerForm.controls;
   }
+
   openDialog() {
     this.dialog.open(DialogDataExampleDialog, {
       data: {
@@ -144,13 +152,20 @@ export class EditUserformComponent implements OnInit {
     } else {
       console.log(this.registerForm.value);
       this.updateassociate(this.registerForm.value);
+      this.router.navigate(["users-list"]);
       // //Trigger Formdata Submission Api
       // this.router.navigate(["users-list"]);
     }
   }
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      duration: 2000
+    });
+  }
   updateassociate(data) {
     this.loginService.updateAssociate(data).subscribe(data => {
       console.log(data);
+      this.openSnackBar("Updated Successfully", "Done");
     });
   }
   onReset() {
@@ -170,5 +185,54 @@ export class EditUserformComponent implements OnInit {
   templateUrl: "dialog-data-example-dialog.html"
 })
 export class DialogDataExampleDialog {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+  // constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+  constructor(
+    public dialogRef: MatDialogRef<EditUserformComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData,
+    private route: ActivatedRoute,
+    private router: Router,
+    private formBuilder: FormBuilder,
+    private loginService: LoginService
+  ) {
+    this.editForm = this.formBuilder.group({
+      amount: ["", Validators.required],
+      description: ["", Validators.required]
+    });
+  }
+  userId: any;
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      console.log(params);
+      this.userId = params.uid;
+    });
+  }
+  editForm: FormGroup;
+
+  get f() {
+    return this.editForm.controls;
+  }
+
+  selection: any;
+  onSubmit1() {
+    // stop here if form is invalid
+    if (this.editForm.invalid) {
+      return;
+    } else {
+      console.log(this.editForm.value, this.selection);
+      let data = {
+        acceptingPayment: this.selection == "acceptingPayment" ? true : false,
+        givingCredit: this.selection == "givingCredit" ? true : false,
+        amount: this.editForm.value.amount,
+        description: this.editForm.value.description,
+        userId: this.userId
+      };
+      console.log(data);
+      this.loginService.addPayments(data).subscribe(data => {
+        console.log(data);
+      });
+      //this.updateassociate(this.registerForm.value);
+      // //Trigger Formdata Submission Api
+      // this.router.navigate(["users-list"]);
+    }
+  }
 }

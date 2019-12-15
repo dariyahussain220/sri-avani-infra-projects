@@ -53,73 +53,101 @@
         </div>
     </div>
      -->
-
-
+<app-header class="clearfix"></app-header>
 <div class="clearfix">
-    <footer class="footer">
-        <div class="section section-footer-content">
-            <div class="container">
-                <div class="row row-call-to-action">
-                    <div class="col-xs-12 text-center">
-                        <h2 class="h1">Build your infrastructure now.</h2>
-                    </div>
+  <footer class="footer">
+    <div class="section section-footer-content">
+      <div class="container">
+        <div class="row row-call-to-action">
+          <div class="col-xs-12 text-center">
+            <h2 class="h1">Build your infrastructure now.</h2>
+          </div>
+        </div>
+        <div class="row row-sitemap">
+          <div class="col-xs-10 col-xs-offset-1 col-sm-2 col-sm-offset-0">
+            <hr class="hr-sm" />
+            <ul class="list-unstyled">
+              <li>Plot no: 940</li>
+              <li>Road no.1,1st floor,Abhiruchi</li>
+              <li>swagruha foods building</li>
+              <li>Vivekananda nagar, Kukatpally,</li>
+              <li>Hyderabad, TS, 500072</li>
+            </ul>
+          </div>
+          <div class="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-0">
+            <hr class="hr-sm" />
+            <ul class="list-unstyled">
+              <li>Mobile Numbers</li>
+              <li>8501057527</li>
+              <li>9346918444</li>
+              <li>9885530645</li>
+              <li>9640761861</li>
+            </ul>
+          </div>
+          <div class="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-0">
+            <hr class="hr-sm" />
+
+            <div class="card-body p-3">
+              <!--Body-->
+              <form [formGroup]="contactForm" (ngSubmit)="sendMessage()">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    placeholder="Enter name"
+                    required="required"
+                    formControlName="name"
+                  />
                 </div>
-                <div class="row row-sitemap">
-                    <div class="col-xs-10 col-xs-offset-1 col-sm-2 col-sm-offset-0">
-                        <hr class="hr-sm">
-                        <ul class="list-unstyled">
-                            <li>Plot no: 940</li>
-                            <li>Road no.1,1st floor,Abhiruchi</li>
-                            <li>swagruha foods building</li>
-                            <li>Vivekananda nagar, Kukatpally,</li>
-                            <li>Hyderabad, TS, 500072</li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-0">
-                        <hr class="hr-sm">
-                        <ul class="list-unstyled">
-                            <li>Mobile Numbers</li>
-                            <li>8501057527</li>
-                            <li>9346918444</li>
-                            <li>9885530645</li>
-                            <li>9640761861</li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-0">
-                        <hr class="hr-sm">
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-addon"
+                      ><span class="glyphicon glyphicon-envelope"></span>
+                    </span>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      placeholder="Enter email address"
+                      required="required"
+                      formControlName="email"
+                    />
+                  </div>
+                </div>
 
-                        <div class="card-body p-3">
+                <div class="form-group">
+                  <textarea
+                    name="message"
+                    id="message"
+                    class="form-control message"
+                    rows="9"
+                    cols="25"
+                    required="required"
+                    placeholder="Message"
+                    formControlName="message"
+                  ></textarea>
+                </div>
 
-                            <!--Body-->
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="name" placeholder="Enter name"
-                                    required="required" />
-                            </div>
-                            <div class="form-group">
-
-                                <div class="input-group">
-                                    <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
-                                    </span>
-                                    <input type="email" class="form-control" id="email"
-                                        placeholder="Enter email address" required="required" /></div>
-                            </div>
-
-                            <div class="form-group">
-                                <textarea name="message" id="message" class="form-control message" rows="9" cols="25"
-                                    required="required" placeholder="Message"></textarea>
-                            </div>
-
-                            <div class="text-center">
-                                <input type="submit" value="Submit" class="btn btn-info btn-block rounded-0 py-2">
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-0">
-                        <hr class="hr-sm">
-                        <h2 style="font-size: 22px;font-family:sans-serif;"><b style="font-family:sans-serif;">Email:</b>sriavaniinfraprojects21@gmail.com</h2><br>
-                        <!-- <h1 style="color: white;">{{ title }}</h1> -->
-                        <div>
+                <div class="text-center">
+                  <input
+                    type="submit"
+                    value="Submit"
+                    class="btn btn-info btn-block rounded-0 py-2"
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-0">
+            <hr class="hr-sm" />
+            <h2 style="font-size: 22px;font-family:sans-serif;">
+              <b style="font-family:sans-serif;">Email:</b
+              >sriavaniinfraprojects21@gmail.com
+            </h2>
+            <br />
+            <!-- <h1 style="color: white;">{{ title }}</h1> -->
+            <!-- <div>
                                 <agm-map 
                                 [latitude]="lat"
                                 [longitude]="lng"
@@ -151,13 +179,10 @@
                                 </agm-circle>
                               
                               </agm-map>
-                        </div>
-                        
-                    </div>
-
-                </div>
-            </div>
+                        </div> -->
+          </div>
         </div>
-
-    </footer>
+      </div>
+    </div>
+  </footer>
 </div>

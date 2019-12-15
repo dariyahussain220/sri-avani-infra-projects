@@ -1,14 +1,15 @@
+<app-header class="clearfix" [childMessage]="parentMessage"></app-header>
 <div style="margin-top: 5px;">
 <mat-accordion>
 
         <mat-expansion-panel (opened)="panelOpenState = true"
                              (closed)="panelOpenState = false">
-          <mat-expansion-panel-header>
+          <mat-expansion-panel-header style="height: 40px;border: 1px solid black;">
             <mat-panel-title>
               <!-- Self aware panel -->
             </mat-panel-title>
             <mat-panel-description>
-                    <h2>ASSOCIATE FORM FOR EDIT</h2>
+                    <h4 style="margin-left: 15%;">ASSOCIATE FORM FOR EDIT</h4>
             </mat-panel-description>
           </mat-expansion-panel-header>
           <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">     
@@ -320,12 +321,12 @@
             </form>
         </mat-expansion-panel>
         <mat-expansion-panel>
-                <mat-expansion-panel-header>
+                <mat-expansion-panel-header style="height: 40px;border: 1px solid black;">
                   <mat-panel-title>
                     <!-- Personal data -->
                   </mat-panel-title>
                   <mat-panel-description>
-                          <h2>PAYMENTS SECTION</h2>
+                          <h4 style="margin-left: 15%;">PAYMENTS SECTION</h4>
                   </mat-panel-description>
                 </mat-expansion-panel-header>
       <div class="row">
@@ -346,11 +347,11 @@
                   </tr>
               </thead>
               <tbody>
-                  <tr *ngFor="let c of this.paymentdata.paymentInfo">
-                      <td>{{c.amount}}</td>
-                      <td>{{c.description}}</td>
+                  <!-- <tr *ngFor="let c of this.paymentdata.paymentInfo">
+                      <td>{{c?.amount}}</td>
+                      <td>{{c?.description}}</td>
                       <td>{{this.paymentdata?.balanceAmount}}</td>
-                  </tr>
+                  </tr> -->
               </tbody>
           </table>
       </div>
