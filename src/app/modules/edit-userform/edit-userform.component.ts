@@ -173,10 +173,12 @@ export class EditUserformComponent implements OnInit {
     this.registerForm.reset();
   }
   paymentdata: any;
+  balanceamount: any;
   getPaymentslist(id) {
     this.loginService.getPaymentsList(id).subscribe(data => {
       console.log(data);
-      this.paymentdata = data;
+      this.balanceamount = data["balanceAmount"];
+      this.paymentdata = data["paymentInfo"];
     });
   }
 }
@@ -187,7 +189,7 @@ export class EditUserformComponent implements OnInit {
 export class DialogDataExampleDialog {
   // constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
   constructor(
-    public dialogRef: MatDialogRef<EditUserformComponent>,
+    public dialogRef: MatDialogRef<DialogDataExampleDialog>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData,
     private route: ActivatedRoute,
     private router: Router,
@@ -229,6 +231,8 @@ export class DialogDataExampleDialog {
       console.log(data);
       this.loginService.addPayments(data).subscribe(data => {
         console.log(data);
+        this.dialogRef.close();
+        this.router.navigate(["users-list"]);
       });
       //this.updateassociate(this.registerForm.value);
       // //Trigger Formdata Submission Api

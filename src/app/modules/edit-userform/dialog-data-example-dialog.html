@@ -78,12 +78,34 @@ background: cadetblue;"
             </div>
           </div>
           <br />
-          <div class="row">
+          <!-- <div class="row">
             <div class="col-md-6" style="text-align: right;">
               <button [mat-dialog-close]="true">Cancel</button>
             </div>
             <div class="col-md-6" style="text-align: left;">
               <button>Submit</button>
+            </div>
+          </div> -->
+          <div class="row applystyle">
+            <div class="col-lg-6" style="text-align: right;">
+              <button
+                id="btn-reset"
+                type="reset"
+                class="btn button"
+                [mat-dialog-close]="true"
+              >
+                Cancel
+              </button>
+            </div>
+            <div class="col-lg-6" style="text-align: left;">
+              <button
+                id="btn-Register"
+                type="submit"
+                name="submit"
+                class="btn btn-success"
+              >
+                Save
+              </button>
             </div>
           </div>
         </div>
