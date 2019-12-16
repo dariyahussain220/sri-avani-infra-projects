@@ -53,19 +53,19 @@ section .section-title {
   content: "\f018";
 }
 #what-we-do .card .block-2:before {
-  content: "\f015";
+  content: "\f0f7";
 }
 #what-we-do .card .block-3:before {
-  content: "\f00c";
+  content: "\f19c";
 }
 #what-we-do .card .block-4:before {
-  content: "\f209";
+  content: "\f015";
 }
 #what-we-do .card .block-5:before {
-  content: "\f0a1";
+  content: "\f015";
 }
 #what-we-do .card .block-6:before {
-  content: "\f218";
+  content: "\f278";
 }
 #what-we-do .card:hover .card-block:before {
   -webkit-transform: rotate(360deg);

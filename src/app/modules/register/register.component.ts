@@ -85,4 +85,8 @@ export class RegisterComponent implements OnInit {
     this.registerForm.reset();
     this.router.navigate(["users-list"]);
   }
+  onCancel() {
+    this.registerForm.reset();
+    this.router.navigate(["users-list"]);
+  }
 }
