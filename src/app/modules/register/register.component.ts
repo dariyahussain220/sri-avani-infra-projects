@@ -13,7 +13,7 @@ import * as moment from "moment";
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
-
+  parentMessage = "true";
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
@@ -83,5 +83,6 @@ export class RegisterComponent implements OnInit {
   onReset() {
     this.submitted = false;
     this.registerForm.reset();
+    this.router.navigate(["users-list"]);
   }
 }

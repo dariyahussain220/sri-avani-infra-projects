@@ -22,8 +22,11 @@ export class GalleryComponent implements OnInit {
       this._albums.push(album);
     }
   }
-
+  desired_columns: any;
+  desired_rowHeight: any;
   ngOnInit() {
+    this.desired_columns = 2;
+
     // for (let i = 1; i <= 28; i++) {
     //   const src = "../assets/gallery/image" + i + ".jpg";
     //   const caption = "Image " + i + " caption here";

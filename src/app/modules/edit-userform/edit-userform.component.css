@@ -241,3 +241,10 @@ div.dhtmlx_window_active,
 div.dhx_modal_cover_dv {
   position: fixed !important;
 }
+.masthead {
+  height: auto;
+  min-height: 100vh;
+  background-image: url(/assets/building.jpg);
+  background-size: cover;
+  background-position: center;
+}

@@ -1,93 +1,95 @@
-<app-header class="clearfix" [childMessage]="parentMessage"></app-header>
-<div class="row" style="margin-left:0px;margin-right: 0px;margin-top: 10px ;">
-  <div class="col-md-11">
-    <h4 style="margin-left: 14px;">List of Users</h4>
+<div class="masthead">
+  <app-header class="clearfix" [childMessage]="parentMessage"></app-header>
+  <div class="row" style="margin-left:0px;margin-right: 0px;margin-top: 10px ;">
+    <div class="col-md-11">
+      <h4 style="margin-left: 14px;">List of Users</h4>
+    </div>
+    <div
+      class="col-md-1"
+      style="text-align: right;padding-top: 5px;margin-bottom: 4px;"
+    >
+      <i
+        class="fa fa-user-plus fa-2x"
+        (click)="gotoRegister()"
+        style="cursor: pointer;"
+      ></i>
+    </div>
   </div>
-  <div
-    class="col-md-1"
-    style="text-align: right;padding-top: 5px;margin-bottom: 4px;"
-  >
-    <i
-      class="fa fa-user-plus fa-2x"
-      (click)="gotoRegister()"
-      style="cursor: pointer;"
-    ></i>
-  </div>
-</div>
-<div class="datagrid">
-  <table
-    class="mybox-table"
-    [mfData]="data"
-    #mf="mfDataTable"
-    [mfRowsOnPage]="5"
-    [mfSaveRowsOnPage]="true"
-    (mfSelectedEntities)="setSelectedEntities($event)"
-  >
-    <thead>
-      <tr>
-        <th>
-          <mfRowSelectorHead></mfRowSelectorHead>
-        </th>
-        <th style="width: 20%;color:white">
-          Identity No
-          <!-- <mfDefaultSorter by="id" [mfShowSortableArrows]="true"
+  <div class="datagrid">
+    <table
+      class="mybox-table"
+      [mfData]="data"
+      #mf="mfDataTable"
+      [mfRowsOnPage]="5"
+      [mfSaveRowsOnPage]="true"
+      (mfSelectedEntities)="setSelectedEntities($event)"
+    >
+      <thead>
+        <tr>
+          <th>
+            <mfRowSelectorHead></mfRowSelectorHead>
+          </th>
+          <th style="width: 20%;color:white">
+            Identity No
+            <!-- <mfDefaultSorter by="id" [mfShowSortableArrows]="true"
             >Identity No</mfDefaultSorter
           > -->
-        </th>
-        <th style="width: 30%;color:white">
-          Email
-          <!-- <mfDefaultSorter by="email">Email</mfDefaultSorter> -->
-        </th>
-        <th style="width: 10%;color:white">
-          Designation
-          <!-- <mfDefaultSorter by="designation">Designation</mfDefaultSorter> -->
-        </th>
-        <th style="width: 10%;color:white">
-          Mobile Number
-          <!-- <mfDefaultSorter by="mobileNumber">Mobile Number</mfDefaultSorter> -->
-        </th>
-        <th style="width: 20%;color:white">
-          Date Of Birth
-          <!-- <mfDefaultSorter by="dob">Date Of Birth</mfDefaultSorter> -->
-        </th>
-        <th style="width: 20%;color:white">
-          Actions
-          <!-- <mfDefaultSorter by="dob">Actions</mfDefaultSorter> -->
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let c of mf.data; let i = index">
-        <td>
-          <mfRowSelector [entity]="c" [checkboxId]="ndx"></mfRowSelector>
-        </td>
-        <td>{{ c.userId }}</td>
-        <td>{{ c.email }}</td>
-        <td>{{ c.designation }}</td>
-        <td>{{ c.mobileNumber }}</td>
-        <td>{{ c.dob }}</td>
-        <td>
-          <i
-            class="fa fa-user-edit fa-2x"
-            style="cursor: pointer; color: black;"
-            (click)="editUser(c)"
-          ></i
-          ><i
-            class="fa fa-user-minus fa-2x"
-            style="margin-left: 10px;cursor: pointer;color: black;"
-            (click)="deleteUser(c)"
-          ></i>
-        </td>
-      </tr>
-    </tbody>
-    <tfoot>
-      <tr>
-        <td colspan="4">
-          <mfBootstrapPaginator
-            [rowsOnPageSet]="[5, 10, 25]"
-          ></mfBootstrapPaginator>
-        </td>
-      </tr>
-    </tfoot>
-  </table>
+          </th>
+          <th style="width: 30%;color:white">
+            Email
+            <!-- <mfDefaultSorter by="email">Email</mfDefaultSorter> -->
+          </th>
+          <th style="width: 10%;color:white">
+            Designation
+            <!-- <mfDefaultSorter by="designation">Designation</mfDefaultSorter> -->
+          </th>
+          <th style="width: 10%;color:white">
+            Mobile Number
+            <!-- <mfDefaultSorter by="mobileNumber">Mobile Number</mfDefaultSorter> -->
+          </th>
+          <th style="width: 20%;color:white">
+            Date Of Birth
+            <!-- <mfDefaultSorter by="dob">Date Of Birth</mfDefaultSorter> -->
+          </th>
+          <th style="width: 20%;color:white">
+            Actions
+            <!-- <mfDefaultSorter by="dob">Actions</mfDefaultSorter> -->
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of mf.data; let i = index">
+          <td>
+            <mfRowSelector [entity]="c" [checkboxId]="ndx"></mfRowSelector>
+          </td>
+          <td>{{ c.userId }}</td>
+          <td>{{ c.email }}</td>
+          <td>{{ c.designation }}</td>
+          <td>{{ c.mobileNumber }}</td>
+          <td>{{ c.dob }}</td>
+          <td>
+            <i
+              class="fa fa-user-edit fa-2x"
+              style="cursor: pointer; color: black;"
+              (click)="editUser(c)"
+            ></i
+            ><i
+              class="fa fa-user-minus fa-2x"
+              style="margin-left: 10px;cursor: pointer;color: black;"
+              (click)="deleteUser(c)"
+            ></i>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4">
+            <mfBootstrapPaginator
+              [rowsOnPageSet]="[5, 10, 25]"
+            ></mfBootstrapPaginator>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
 </div>

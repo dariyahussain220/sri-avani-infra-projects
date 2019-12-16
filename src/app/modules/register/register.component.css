@@ -1,6 +1,13 @@
 .registerpanel .panel-heading {
   color: #f3674c;
 }
+.masthead {
+  height: auto;
+  min-height: 100vh;
+  background-image: url(/assets/building.jpg);
+  background-size: cover;
+  background-position: center;
+}
 .registerpanel {
   color: #000;
   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2),

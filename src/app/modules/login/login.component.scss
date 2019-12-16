@@ -1,85 +1,91 @@
-.login-bg {
-    background-color: cadetblue;
-    width: 100%;
-    height: 100vh;
-   // margin-top: -77px;
+// .login-bg {
+//   background-color: cadetblue;
+//   width: 100%;
+//   height: 100vh;
+//   // margin-top: -77px;
+// }
+.masthead {
+  height: auto;
+  min-height: 100vh;
+  background-image: url(/assets/building.jpg);
+  background-size: cover;
+  background-position: center;
 }
-
 .login-container {
-    .login-logos {
+  .login-logos {
+    margin-bottom: 20px;
+  }
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  top: 50%;
+  width: 556px;
+  max-width: 100%;
+  left: 50%;
+  position: absolute;
+  .form-set {
+    border: 1px solid rgba(62, 57, 107, 0.06);
+    -webkit-box-shadow: 0 1px 15px 1px rgba(62, 57, 107, 0.07);
+    box-shadow: 0 1px 15px 1px rgba(62, 57, 107, 0.07);
+    border-radius: 7px;
+    overflow: hidden;
+    background-color: #fff;
+    display: flex;
+    .col-md-10 {
+      // padding: 30px 40px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      margin-left: 8%;
+      input {
+        border-radius: 4px;
+        border: 1px solid #e4e7ea;
+        width: 100%;
+        margin-bottom: 25px;
+        padding: 9px 10px 9px 50px;
+        height: inherit;
+      }
+      button {
+        background-color: #00a1a9;
+        color: #fff;
+        border: 1px solid #00a1a9;
+        border-radius: 4px;
+        padding: 8px 25px;
+      }
+      .login-heading {
+        color: #707070;
+        font-size: 27px;
+      }
+      .login-sub-heading {
+        color: #73818f;
+        font-size: 16px;
         margin-bottom: 20px;
+      }
+      .forgot-password {
+        padding: 8px 0;
+      }
+      img {
+        position: absolute;
+      }
     }
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    top: 50%;
-    width: 556px;
-    max-width: 100%;
-    left: 50%;
-    position: absolute;
-    .form-set {
-        border: 1px solid rgba(62, 57, 107, 0.06);
-        -webkit-box-shadow: 0 1px 15px 1px rgba(62, 57, 107, .07);
-        box-shadow: 0 1px 15px 1px rgba(62, 57, 107, .07);
-        border-radius: 7px;
-        overflow: hidden;
-        background-color: #fff;
-        display: flex;
-        .col-md-10 {
-            // padding: 30px 40px;
-            padding-top: 50px;
-            padding-bottom: 50px;
-            margin-left: 8%;
-            input {
-                border-radius: 4px;
-                border: 1px solid #E4E7EA;
-                width: 100%;
-                margin-bottom: 25px;
-                padding: 9px 10px 9px 50px;
-                height: inherit;
-            }
-            button {
-                background-color: #00A1A9;
-                color: #fff;
-                border: 1px solid #00A1A9;
-                border-radius: 4px;
-                padding: 8px 25px;
-            }
-            .login-heading {
-                color: #707070;
-                font-size: 27px;
-            }
-            .login-sub-heading {
-                color: #73818F;
-                font-size: 16px;
-                margin-bottom: 20px;
-            }
-            .forgot-password {
-                padding: 8px 0;
-            }
-            img {
-                position: absolute;
-            }
+    .col-md-5 {
+      padding: 30px 40px;
+      background-color: #2c303b;
+      color: #fff;
+      h1 {
+        margin: 0;
+        padding: 0;
+        font-size: 24px;
+      }
+      .supp-txt {
+        margin: 15px 0;
+      }
+      .sup-call {
+        div {
+          font-size: 24px;
+          font-weight: 100;
         }
-        .col-md-5 {
-            padding: 30px 40px;
-            background-color: #2C303B;
-            color: #fff;
-            h1 {
-                margin: 0;
-                padding: 0;
-                font-size: 24px;
-            }
-            .supp-txt {
-                margin: 15px 0;
-            }
-            .sup-call {
-                div {
-                    font-size: 24px;
-                    font-weight: 100
-                }
-            }
-        }
+      }
     }
+  }
 }
 
 // body,
