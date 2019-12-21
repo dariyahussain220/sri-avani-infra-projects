@@ -181,6 +181,9 @@ export class EditUserformComponent implements OnInit {
       this.paymentdata = data["paymentInfo"];
     });
   }
+  gotoUserlist() {
+    this.router.navigate(["users-list"]);
+  }
 }
 @Component({
   selector: "dialog-data-example-dialog",

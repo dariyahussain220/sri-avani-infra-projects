@@ -13,6 +13,7 @@
   border-radius: 3px;
   margin: 1%;
 }
+
 .datagrid table td,
 .datagrid table th {
   padding: 3px 10px;
@@ -112,7 +113,8 @@ div.dhx_modal_cover_dv {
 .masthead {
   height: auto;
   min-height: 100vh;
-  background-image: url(/assets/building.jpg);
+  /* background-image: url(/assets/building.jpg); */
+  background-color: ghostwhite;
   background-size: cover;
   background-position: center;
 }
