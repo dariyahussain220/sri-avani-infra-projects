@@ -1,4 +1,4 @@
-<h1
+<!-- <h1
   mat-dialog-title
   style="text-align: center;border: 1px solid gainsboro;
 background: cadetblue;"
@@ -15,15 +15,6 @@ background: cadetblue;"
           >
           <mat-radio-button value="givingCredit">Credit</mat-radio-button>
         </mat-radio-group>
-        <!-- <mat-radio-group aria-label="Select an option">
-          <mat-radio-button
-            [(ngModel)]="acceptingPayment"
-            style="margin-right: 40px;"
-            >Payment</mat-radio-button
-          >
-
-          <mat-radio-button [(ngModel)]="givingCredit">Credit</mat-radio-button>
-        </mat-radio-group> -->
       </div>
     </div>
   </div>
@@ -58,8 +49,6 @@ background: cadetblue;"
               <label> Description</label>
             </div>
             <div class="col-md-8 ">
-              <!-- <input type="text" class="form-control form-input" name="name"
-                                            placeholder="name*" [(ngModel)]="user.name" required /> -->
               <input
                 type="text"
                 formControlName="description"
@@ -78,14 +67,6 @@ background: cadetblue;"
             </div>
           </div>
           <br />
-          <!-- <div class="row">
-            <div class="col-md-6" style="text-align: right;">
-              <button [mat-dialog-close]="true">Cancel</button>
-            </div>
-            <div class="col-md-6" style="text-align: left;">
-              <button>Submit</button>
-            </div>
-          </div> -->
           <div class="row applystyle">
             <div class="col-lg-6" style="text-align: right;">
               <button
@@ -112,6 +93,108 @@ background: cadetblue;"
       </div>
     </div>
   </form>
+</div> -->
+
+<div class="panel panel-default">
+  <div class="panel-heading">Payment</div>
+  <div class="panel-body">
+    <div mat-dialog-content>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="col-md-12 ">
+            <mat-radio-group
+              [(ngModel)]="selection"
+              #radioGroup="matRadioGroup"
+            >
+              <mat-radio-button
+                value="acceptingPayment"
+                style="margin-right: 40px;"
+                >Payment</mat-radio-button
+              >
+              <mat-radio-button value="givingCredit">Credit</mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+      </div>
+      <br />
+      <form [formGroup]="editForm" (ngSubmit)="onSubmit1()">
+        <div class="row">
+          <div class="col-md-12">
+            <div>
+              <div class="row">
+                <div class="col-md-4">
+                  <label> Amount</label>
+                </div>
+                <div class="col-md-8 ">
+                  <input
+                    type="text"
+                    formControlName="amount"
+                    class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.amount.errors }"
+                    placeholder="Enter Amount*"
+                  />
+                  <div
+                    *ngIf="submitted && f.amount.errors"
+                    class="invalid-feedback"
+                  >
+                    <div *ngIf="f.amount.errors.required">
+                      Amount is required
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-md-4">
+                  <label> Description</label>
+                </div>
+                <div class="col-md-8 ">
+                  <input
+                    type="text"
+                    formControlName="description"
+                    class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.description.errors }"
+                    placeholder="Enter Description*"
+                  />
+                  <div
+                    *ngIf="submitted && f.description.errors"
+                    class="invalid-feedback"
+                  >
+                    <div *ngIf="f.description.errors.required">
+                      Description is required
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div class="row applystyle">
+                <div class="col-lg-6" style="text-align: right;">
+                  <button
+                    id="btn-reset"
+                    type="reset"
+                    class="btn btn-danger"
+                    [mat-dialog-close]="true"
+                  >
+                    Cancel
+                  </button>
+                </div>
+                <div class="col-lg-6" style="text-align: left;">
+                  <button
+                    id="btn-Register"
+                    type="submit"
+                    name="submit"
+                    class="btn btn-success"
+                  >
+                    Save
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
 
 <!-- Copyright 2019 Google LLC. All Rights Reserved.

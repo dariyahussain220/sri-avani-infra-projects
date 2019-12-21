@@ -21,6 +21,9 @@
   border-right: 1px solid silver;
   height: 150px;
 }
+.panel-body {
+  padding: 30px;
+}
 /* .registerpanel .panel-heading {
     color: #0f3674c;
 }, */

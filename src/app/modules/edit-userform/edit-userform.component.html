@@ -14,7 +14,7 @@
             </mat-panel-description>
           </mat-expansion-panel-header>
           <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">     
-                <div class="row">
+                <div class="row" style=" margin-right: 0px;margin-left: 0px;margin-top: 10px;">
                     <div class="col-md-6">
                         <div class="left-side-form">
                             <!-- <div class="row">
@@ -336,7 +336,13 @@
       
           </div>
           <div class="col-md-01">
-            <button mat-button (click)="openDialog()">Add Payment</button>  
+                <i
+                class="fa fa-plus fa-2x"
+                (click)="openDialog()"
+                style="cursor: pointer;margin-left: 70px;
+                margin-top: 5px;"
+              ></i>
+            <!-- <button mat-button >Add Payment</button>   -->
           </div>
       </div>
       <div class="datagrid">
