@@ -24,6 +24,7 @@
 }
 .panel-body {
   padding: 30px;
+  background: darkgray;
 }
 /* .registerpanel .panel-heading {
     color: #0f3674c;
