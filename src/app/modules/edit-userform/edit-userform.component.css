@@ -17,6 +17,10 @@
   border-right: 1px solid silver;
   height: 150px;
 }
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
 /* .registerpanel .panel-heading {
       color: #0f3674c;
   }, */

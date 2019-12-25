@@ -22,6 +22,9 @@
   border-right: 1px solid silver;
   height: 150px;
 }
+.applystyle {
+  text-align: center;
+}
 .panel-body {
   padding: 30px;
   background: darkgray;

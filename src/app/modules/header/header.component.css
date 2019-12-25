@@ -13,6 +13,9 @@
   text-transform: uppercase;
   color: darkorange;
 }
+.menu-spacer {
+  flex: 1 1 auto;
+}
 
 #custom-bootstrap-menu.navbar-default .navbar-header .navbar-brand {
   color: #ffffff;
@@ -33,4 +36,35 @@
   margin-bottom: 0px !important;
   border: 1px solid transparent;
   background: #d9e7f4;
+}
+@media (max-width: 1199px) {
+  #custom-bootstrap-menu .navbar-collapse.collapse {
+    display: none !important;
+  }
+  #custom-bootstrap-menu .navbar-collapse.collapse.in {
+    display: block !important;
+  }
+  #custom-bootstrap-menu .navbar-toggle {
+    display: block !important;
+  }
+  #custom-bootstrap-menu .navbar-collapse {
+    text-align: center;
+    display: block !important;
+  }
+  #custom-bootstrap-menu .navbar-header {
+    float: none;
+    display: block !important;
+  }
+  #custom-bootstrap-menu .navbar-nav {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+  }
+  #custom-bootstrap-menu .navbar-nav > li {
+    float: none;
+  }
+  #custom-bootstrap-menu .navbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }

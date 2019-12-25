@@ -15,7 +15,92 @@
       ></i>
     </div>
   </div>
-  <div class="datagrid">
+  <div class="example-header" fxLayout="row">
+    <mat-form-field>
+      <input
+        matInput
+        (keyup)="applyFilter($event.target.value)"
+        placeholder="Filter"
+      />
+    </mat-form-field>
+  </div>
+
+  <div class="example-container mat-elevation-z8">
+    <mat-table [dataSource]="dataSource" matSort>
+      <!-- ID Column -->
+      <ng-container matColumnDef="auto_id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          ID
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="auto_id">
+          {{ row.auto_id }}
+        </mat-cell>
+      </ng-container>
+
+      <!-- Progress Column -->
+      <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          EMAIL
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="email">
+          {{ row.email }}
+        </mat-cell>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="designation">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          DESIGNATION
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="designation">
+          {{ row.designation }}
+        </mat-cell>
+      </ng-container>
+
+      <!-- Color Column -->
+      <ng-container matColumnDef="mobileNumber">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          MOBILE NUMBER
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="mobileNumber">
+          {{ row.mobileNumber }}
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="dob">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          DOB
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="dob">
+          {{ row.dob }}
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="Actions">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          ACTIONS
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="Actions">
+          <i
+            class="fa fa-user-edit fa-2x"
+            style="cursor: pointer; color: black;"
+            (click)="editUser(row)"
+          ></i
+          ><i
+            class="fa fa-user-minus fa-2x"
+            style="margin-left: 10px;cursor: pointer;color: black;"
+            (click)="deleteUser(row)"
+          ></i>
+        </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"> </mat-row>
+    </mat-table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+  </div>
+</div>
+
+<!-- 
+<div class="datagrid">
     <table
       class="mybox-table"
       [mfData]="data"
@@ -33,27 +118,27 @@
             Identity No
             <!-- <mfDefaultSorter by="id" [mfShowSortableArrows]="true"
             >Identity No</mfDefaultSorter
-          > -->
+          > 
           </th>
           <th style="width: 30%;color:white">
             Email
-            <!-- <mfDefaultSorter by="email">Email</mfDefaultSorter> -->
+            <!-- <mfDefaultSorter by="email">Email</mfDefaultSorter> 
           </th>
           <th style="width: 10%;color:white">
             Designation
-            <!-- <mfDefaultSorter by="designation">Designation</mfDefaultSorter> -->
+            <!-- <mfDefaultSorter by="designation">Designation</mfDefaultSorter> 
           </th>
           <th style="width: 10%;color:white">
             Mobile Number
-            <!-- <mfDefaultSorter by="mobileNumber">Mobile Number</mfDefaultSorter> -->
+            <!-- <mfDefaultSorter by="mobileNumber">Mobile Number</mfDefaultSorter> 
           </th>
           <th style="width: 20%;color:white">
             Date Of Birth
-            <!-- <mfDefaultSorter by="dob">Date Of Birth</mfDefaultSorter> -->
+            <!-- <mfDefaultSorter by="dob">Date Of Birth</mfDefaultSorter> 
           </th>
           <th style="width: 20%;color:white">
             Actions
-            <!-- <mfDefaultSorter by="dob">Actions</mfDefaultSorter> -->
+            <!-- <mfDefaultSorter by="dob">Actions</mfDefaultSorter> 
           </th>
         </tr>
       </thead>
@@ -91,5 +176,4 @@
         </tr>
       </tfoot>
     </table>
-  </div>
-</div>
+  </div> -->

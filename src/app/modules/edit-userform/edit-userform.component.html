@@ -322,7 +322,11 @@
                         </div>
                     </div>
                     <br>
-                    <div class="row applystyle">
+                    <div class="row" style="text-align: center;">
+                            <button id="btn-reset" type="reset" style="margin-right: 5px;"  class="btn button"> Reset</button>
+                            <button id="btn-Register" type="submit" name="submit" class="btn btn-success">Submit</button>
+                    </div>
+                    <!-- <div class="row applystyle">
                             <div class="col-lg-6" style="text-align: right;">
                                 
                                     <button id="btn-reset" type="reset" class="btn button"> Reset</button>
@@ -330,7 +334,7 @@
                             </div>
                             <div class="col-lg-6" style="text-align: left;">
                                     <button id="btn-Register" type="submit" name="submit" class="btn btn-success">Submit</button></div>
-                        </div>
+                        </div> -->
                 </div>
             </form>
         </div>
@@ -349,10 +353,10 @@
                   </mat-panel-description>
                 </mat-expansion-panel-header>
       <div class="row">
-          <div class="col-md-11">
+          <div class="col-xs-11">
       
           </div>
-          <div class="col-md-01">
+          <div class="col-xs-01" style="float: right;">
                 <i
                 class="fa fa-plus fa-2x"
                 (click)="openDialog()"
