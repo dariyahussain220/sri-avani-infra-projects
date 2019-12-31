@@ -150,9 +150,13 @@
                                     </div>
                                 </div>
                                 <br />
+                                
                                 <div class="row">
-                                    <div class="col-md-4">
-                                        <label>Wedding Anniversary</label>
+                                    <div class="col-md-4" *ngIf="this.editdata.weddingAnniversary=='single'">
+                                        <label>Marital Status</label>
+                                    </div>
+                                    <div class="col-md-4" *ngIf="this.editdata.weddingAnniversary!=='single'">
+                                            <label>Wedding Anniversary</label>
                                     </div>
                                     <div class="col-md-8 ">
                                         

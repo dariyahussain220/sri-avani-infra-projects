@@ -46,7 +46,7 @@
                                             </div>
                                             <div class="col-md-8 ">
                                                 
-                                                    <input type="text" formControlName="guardian" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.guardian.errors }" placeholder="Enter Father Name*" />
+                                                    <input type="text" formControlName="guardian" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.guardian.errors }" placeholder="Enter Father/Husband's Name*" />
                                                     <div *ngIf="submitted && f.guardian.errors" class="invalid-feedback">
                                                         <div *ngIf="f.guardian.errors.required">Father Name is required</div>
                                                     </div>
@@ -85,7 +85,7 @@
                                             </div>
                                             <div class="col-md-8 ">
                                              
-                                                    <input type="text" formControlName="introducedBy" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.introducedBy.errors }" placeholder="Enter Contact Number*" />
+                                                    <input type="text" formControlName="introducedBy" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.introducedBy.errors }" placeholder="Enter Introduced Name*" />
                                                     <div *ngIf="submitted && f.introducedBy.errors" class="invalid-feedback">
                                                         <div *ngIf="f.introducedBy.errors.required">Name is required</div>
                                                     </div>
@@ -98,7 +98,7 @@
                                             </div>
                                             <div class="col-md-8 ">
                                              
-                                                    <input type="text" formControlName="employeeCode" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.employeeCode.errors }" placeholder="Enter Contact Number*" />
+                                                    <input type="text" formControlName="employeeCode" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.employeeCode.errors }" placeholder="Enter Employee Code*" />
                                                     <div *ngIf="submitted && f.employeeCode.errors" class="invalid-feedback">
                                                         <div *ngIf="f.employeeCode.errors.required">Name is required</div>
                                                     </div>
@@ -137,6 +137,27 @@
                                             </div>
                                             <br />
                                             <div class="row">
+                                                    <div class="col-md-4">
+                                                        <label>Marital Status</label>
+                                                    </div>
+                                                    <div class="col-md-8 " style="margin-top: 8px;">
+                                                            
+                                                        <mat-radio-group
+                                                            [(ngModel)]="selection"
+                                                            #radioGroup="matRadioGroup"
+                                                            [ngModelOptions]="{standalone: true}"
+                                                          >
+                                                            <mat-radio-button
+                                                              value="single"
+                                                              style="margin-right: 40px;"
+                                                              >Single</mat-radio-button
+                                                            >
+                                                            <mat-radio-button value="married">Married</mat-radio-button>
+                                                          </mat-radio-group>
+                                                    </div>
+                                                </div>
+                                                <br />
+                                            <div class="row" *ngIf="this.selection!==''&&this.selection!=='single'" >
                                                 <div class="col-md-4">
                                                     <label>Wedding Anniversary</label>
                                                 </div>
@@ -196,9 +217,11 @@
                                             matInput
                                            [matDatepicker]="dob"
                                            formControlName="dob"
+                                           (ngModelChange)="updateCalcs($event)"
+                                           placeholder="Date of Birth" [(ngModel)]="birthdate" 
                                           >
                                         <mat-datepicker-toggle matSuffix [for]="dob"></mat-datepicker-toggle>
-                                          <mat-datepicker #dob></mat-datepicker>
+                                          <mat-datepicker #dob  ></mat-datepicker>
                                         </mat-form-field>
                                     <!-- <input type="text" formControlName="dob" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" placeholder="MM/DD/YYYY" />
                                     <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">

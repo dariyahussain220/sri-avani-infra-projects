@@ -17,6 +17,9 @@
   border-right: 1px solid silver;
   height: 150px;
 }
+label {
+  white-space: nowrap;
+}
 .row {
   margin-left: 0px;
   margin-right: 0px;

@@ -25,6 +25,9 @@
 .applystyle {
   text-align: center;
 }
+label {
+  white-space: nowrap;
+}
 .panel-body {
   padding: 30px;
   background: darkgray;

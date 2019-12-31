@@ -162,6 +162,7 @@ export class EditUserformComponent implements OnInit {
       duration: 2000
     });
   }
+
   updateassociate(data) {
     this.loginService.updateAssociate(data).subscribe(data => {
       console.log(data);
