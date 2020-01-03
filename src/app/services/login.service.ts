@@ -8,7 +8,7 @@ const httpOptions = {
     "Content-Type": "application/json"
   })
 };
-const Url = "http://52.221.179.156:8082/";
+const Url = "http://13.250.123.225:8082/";
 @Injectable({
   providedIn: "root"
 })

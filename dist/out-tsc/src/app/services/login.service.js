@@ -8,7 +8,7 @@ const httpOptions = {
         "Content-Type": "application/json"
     })
 };
-const Url = "http://3.1.203.185:8082/";
+const Url = "http://13.250.123.225:8082/";
 let LoginService = class LoginService {
     constructor(httpClient) {
         this.httpClient = httpClient;
